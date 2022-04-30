@@ -10,10 +10,7 @@ import { IUser } from '../models/user';
 export class HomeContainerComponent implements OnInit {
 
   students = STUDENT;
-  showCreateModal: boolean = false;
-  showStudentModal: boolean = false;
-  showProfileModal: boolean = true;
-  closeModal: boolean = false;
+  showModal: boolean = false;
 
 
   selectedStudent!: IUser;

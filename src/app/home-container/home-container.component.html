@@ -1,15 +1,10 @@
 <div class="container-fluid">
-  <app-nav-bar
-    (showStudentModal)="showStudentModal = true"
-  ></app-nav-bar>
+  <app-nav-bar (showStudentModal)="showModal = true"></app-nav-bar>
   <app-slider></app-slider>
-  <app-content
-    [students]="students"
-    (showProfile)="showProfileModal = true"
-  ></app-content>
+  <app-content [students]="students"></app-content>
   <app-add-student
     (submitted)="add($event)"
-    *ngIf="showStudentModal"
-    (closeStudentModal)="showStudentModal = false"
+    *ngIf="showModal"
+    (closeStudentModal)="showModal = false"
   ></app-add-student>
 </div>
