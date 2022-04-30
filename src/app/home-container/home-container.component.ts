@@ -12,10 +12,10 @@ export class HomeContainerComponent implements OnInit {
   students = STUDENT;
   showCreateModal:boolean = false;
   showStudentModal:boolean = false;
-  showProfileModal:boolean = false;
+  showProfileModal:boolean = true;
   closeModal: boolean = false;
 
-  selectedStudent?: IUser;
+  selectedStudent!: IUser;
 
   constructor() { }
 

@@ -1,8 +1,7 @@
     <div class="container-fluid">
         <app-nav-bar (showStudentModal)="showStudentModal=true"></app-nav-bar>
-        <app-profile-view [student]="selectedStudent" (closeModal)="showProfileModal=false" *ngIf="showProfileModal"></app-profile-view>
         <app-slider></app-slider>
-        <app-content (showProfileModal)="showProfileModal=true"></app-content>
+        <app-content (showProfile)="showProfileModal=true"></app-content>
         <app-add-student (submitted)="add($event)" *ngIf="showStudentModal" (closeStudentModal)="showStudentModal=false"></app-add-student>  
     </div>
    

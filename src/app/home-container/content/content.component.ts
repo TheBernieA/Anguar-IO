@@ -10,7 +10,10 @@ import { IUser } from 'src/app/modals/models/user';
 export class ContentComponent implements OnInit {
 
   students = STUDENT;
-  @Output() showProfileModal = new EventEmitter<void>()
+  showProfileModal:boolean = false;
+  selectedStudent!: IUser;
+
+  @Output() displayStudent = new EventEmitter<IUser>()
 
   constructor() { }
 
@@ -24,5 +27,10 @@ export class ContentComponent implements OnInit {
   delete(student: any){
     const index = this.students.indexOf(student)
     this.students.splice(index, 1)
+  }
+
+  selectedUser(student:IUser){
+   this.selectedStudent = student
+   
   }
 }

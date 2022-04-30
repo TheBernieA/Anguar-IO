@@ -10,7 +10,7 @@ import { IUser } from '../models/user';
 export class ProfileViewComponent implements OnInit {
 
   @Output() closeModal = new EventEmitter<void>()
-  @Input() student?: IUser
+  @Input() student!: IUser
 
   constructor() { }
 
