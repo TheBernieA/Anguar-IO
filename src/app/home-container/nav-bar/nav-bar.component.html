@@ -14,8 +14,7 @@
             <li class="nav-item" style="cursor: pointer;" (click)="showStudentModal.emit()"><i class="bi bi-plus"></i>ADD CONTENT</li>
         </ul>
         <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn" type="submit">Search</button>
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchText" (ngModelChange)="search()">
         </form>
       </div>
     </div>

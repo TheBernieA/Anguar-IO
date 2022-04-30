@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { STUDENT } from '../modals/models/mock-user';
-import { IUser } from '../modals/models/user';
+import { STUDENT } from '../models/mock-user';
+import { IUser } from '../models/user';
 
 @Component({
   selector: 'app-home-container',
@@ -10,10 +10,11 @@ import { IUser } from '../modals/models/user';
 export class HomeContainerComponent implements OnInit {
 
   students = STUDENT;
-  showCreateModal:boolean = false;
-  showStudentModal:boolean = false;
-  showProfileModal:boolean = true;
+  showCreateModal: boolean = false;
+  showStudentModal: boolean = false;
+  showProfileModal: boolean = true;
   closeModal: boolean = false;
+
 
   selectedStudent!: IUser;
 
@@ -22,13 +23,20 @@ export class HomeContainerComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  add(student: IUser){
-    this.students.push({...student,
-    id: this.students.length
+  add(student: IUser) {
+    this.students.push({
+      ...student,
+      id: this.students.length
     })
   }
 
-  showDetials(student: IUser){
+  showDetials(student: IUser) {
     this.selectedStudent = student
   }
+
+  delete(student: IUser) {
+    const index = this.students.indexOf(student)
+    this.students.splice(index, 1)
+  }
+
 }

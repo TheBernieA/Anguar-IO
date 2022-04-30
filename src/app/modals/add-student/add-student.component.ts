@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { IUser } from '../models/user';
+import { IUser } from '../../models/user';
 
 @Component({
   selector: 'app-add-student',

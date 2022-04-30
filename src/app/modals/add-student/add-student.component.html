@@ -1,7 +1,7 @@
 <div class="overlay" (click)="closeStudentModal.emit()">
 </div>
 <div class="container d-flex justify-content-center">
-  <form #form="ngForm" class="shadow-sm p-3 mb-5 bg-body rounded" style="width: 600px;" (ngSubmit)="addStudent(form);form.reset()">
+  <form #form="ngForm" class="shadow-sm p-3 mb-5 bg-body rounded" style="width: 600px;" (ngSubmit)="addStudent(form);form.reset();closeStudentModal.emit()">
     <h2>Add Student</h2>
         <div class="row">
           <div class="col-md-6 mb-3">
@@ -26,7 +26,7 @@
           </div>
           <div class="col-md-4 mb-3">
             <label for="date-of-birth">Date Of Birth</label>
-            <input id="date-of-birth" type="date" name="date" class="form-control" required ngModel>
+            <input id="date-of-birth" type="date" name="dateOfBirth" class="form-control" required ngModel>
           </div>
           <div class="button d-flex justify-content-end">
               <button [disabled]="form.invalid" class="btn-right mt-2 btn btn-primary" type="submit">Add</button>

@@ -1,13 +1,10 @@
 <div class="overlay" (click)="closeModal.emit()">
 </div>
 <div class="container d-flex justify-content-center">
-  <div class="shadow-sm p-3 mb-5 bg-body rounded" style="width: 600px;">
-    <h2>STUDENT NAME GOES HERE</h2>
+  <div class="shadow-sm p-3 mb-5 bg-body rounded" style="width: 600px;" *ngIf="student">
+    <h2>{{student.name}} {{student.surname}}</h2>
         <div class="row">
-          <ul style="background-color: lightgray; list-style: none; display: flex; flex-direction: column; gap: .5rem;" *ngIf="student">
-            <li>Name: {{student.name}}</li>
-            <li>Surname: {{student.surname}}</li>
-            <li>Email: {{student.email}}</li>
+          <ul style="background-color: lightgray; list-style: none; display: flex; flex-direction: column; gap: .5rem;" >
             <li>Address: {{student.address}}</li>
             <li>Note: {{student.note}}</li>
             <li>Date of Birth: {{student.dateOfBirth | date: 'longDate'}}</li>
