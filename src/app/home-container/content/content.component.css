@@ -1,0 +1,8 @@
+.wrapper{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.wrapper:hover{
+    background: lightgrey; 
+    transform: scale(1.01);
+    transition: .3s ease-in-out;
+}

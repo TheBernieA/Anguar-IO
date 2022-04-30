@@ -1,0 +1,36 @@
+<div class="overlay" (click)="closeStudentModal.emit()">
+</div>
+<div class="container d-flex justify-content-center">
+  <form #form="ngForm" class="shadow-sm p-3 mb-5 bg-body rounded" style="width: 600px;" (ngSubmit)="addStudent(form);form.reset()">
+    <h2>Add Student</h2>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="name">Name</label>
+            <input type="text" name="name" class="form-control" placeholder="name" required ngModel>
+          </div>
+          <div class="col-md-6 mb-3">
+              <label for="post">Surname</label>
+              <input type="text" name="surname" class="form-control" placeholder="surname" required ngModel>
+          </div>
+          <div class="col-md-8 mb-3">
+              <label for="post">Email</label>
+              <input type="email" name="email" class="form-control" placeholder="e-mail" required ngModel>
+          </div>
+          <div class="col-md-7 mb-3">
+              <label for="post">Address</label>
+              <input type="email" name="address" class="form-control" placeholder="address" required ngModel>
+          </div>
+          <div class="col-md-7 mb-3">
+              <label for="post">Note</label>
+              <textarea name="note" id="" cols="30" class="form-control" placeholder="Note about student"  rows="10" required ngModel></textarea>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="date-of-birth">Date Of Birth</label>
+            <input id="date-of-birth" type="date" name="date" class="form-control" required ngModel>
+          </div>
+          <div class="button d-flex justify-content-end">
+              <button [disabled]="form.invalid" class="btn-right mt-2 btn btn-primary" type="submit">Add</button>
+          </div>
+        </div>
+      </form>
+</div>
