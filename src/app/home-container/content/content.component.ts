@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component,Input,OnInit } from '@angular/core';
 import { IUser } from 'src/app/models/user';
 
 @Component({
@@ -8,37 +8,21 @@ import { IUser } from 'src/app/models/user';
 })
 export class ContentComponent implements OnInit {
 
-  @Input() students:IUser[]=[];
-  @Output() displayStudent = new EventEmitter<IUser>()
+@Input() students: IUser[] = []
 
-  showProfileModal:boolean = false;
-  selectedStudent!: IUser;
-  searchText: string = ''
-
+showProfileModal: boolean = false;
+selectedStudent!: IUser;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-
-  delete(student: IUser){
-    const index = this.students.indexOf(student)
-    this.students.splice(index, 1)
+  selectedUser(student: IUser){
+    this.selectedStudent = student
+  }
+  delete(id: IUser){
+    this.students=this.students.filter(student => student != id)
   }
 
-  selectedUser(student:IUser){
-   this.selectedStudent = student
-  }
-
-  search() {
-    if (this.searchText === '') {
-      this.students
-    } else {
-      console.log(this.students = this.students.filter(student => {
-        return student.name.toLocaleLowerCase().match(this.searchText.toLocaleLowerCase())
-      }));
-
-    }
-  }
 }

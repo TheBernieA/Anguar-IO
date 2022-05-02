@@ -1,10 +1,6 @@
 <div class="container-fluid">
-  <app-nav-bar (showStudentModal)="showModal = true"></app-nav-bar>
-  <app-slider></app-slider>
-  <app-content [students]="students"></app-content>
-  <app-add-student
-    (submitted)="add($event)"
-    *ngIf="showModal"
-    (closeStudentModal)="showModal = false"
-  ></app-add-student>
+<app-nav-bar (showStudentModal)="showModal = true"></app-nav-bar>
+<app-slider></app-slider>
+<app-content [students]="students" ></app-content>
+<app-add-student (submitted)="add($event)" (hideModal)="showModal = false" *ngIf="showModal"></app-add-student>
 </div>

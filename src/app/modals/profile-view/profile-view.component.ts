@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { STUDENT } from '../../models/mock-user';
-import { IUser } from '../../models/user';
+import { IUser } from 'src/app/models/user';
 
 @Component({
   selector: 'app-profile-view',
@@ -9,9 +8,9 @@ import { IUser } from '../../models/user';
 })
 export class ProfileViewComponent implements OnInit {
 
-  @Output() closeModal = new EventEmitter<void>()
-  @Input() student!: IUser
-
+@Output() closeProfileModal = new EventEmitter<void>()
+@Input() student!: IUser;
+  
   constructor() { }
 
   ngOnInit(): void {

@@ -1,5 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { IUser } from 'src/app/models/user';
+import { Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,17 +6,11 @@ import { IUser } from 'src/app/models/user';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent implements OnInit {
-
-  @Output() showStudentModal = new EventEmitter<void>()
-  @Output() searchText = new EventEmitter<string>()
-
-
+ 
+@Output() showStudentModal = new EventEmitter<void>()
   constructor() { }
 
   ngOnInit(): void {
   }
-search(){
-  this.searchText.emit()
-}
 
 }

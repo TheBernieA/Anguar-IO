@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { IUser } from '../../models/user';
+import { IUser } from 'src/app/models/user';
+
 
 @Component({
   selector: 'app-add-student',
@@ -9,15 +10,16 @@ import { IUser } from '../../models/user';
 })
 export class AddStudentComponent implements OnInit {
 
-  @Output() submitted = new EventEmitter<IUser>()
-  @Output() closeStudentModal = new EventEmitter<void>()
+@Output() hideModal = new EventEmitter<void>()
+@Output() submitted = new EventEmitter<IUser>()
 
   constructor() { }
 
   ngOnInit(): void {
   }
-  //Get input and add to our object
-  addStudent(form: NgForm) {
-    this.submitted.emit({ ...form.value })
-  }
+
+addStudent(form: NgForm){
+  this.submitted.emit({...form.value})
+}
+
 }
